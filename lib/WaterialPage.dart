@@ -5,7 +5,18 @@ class CMaterialPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    final border = OutlineInputBorder(
+      borderSide: BorderSide(
+        color: Colors.black,
+        width: 2.2,
+        strokeAlign: BorderSide.strokeAlignCenter,
+      ),
+      borderRadius: BorderRadius.all(
+        Radius.circular(16),
+      ),
+    );
+
+    return Scaffold(
       // body: Center(
       //   child: Text("hello   gggggg"),
       // ),
@@ -29,19 +40,73 @@ class CMaterialPage extends StatelessWidget {
       //     ],
       //   ),
       // ),
-      backgroundColor: Color.fromARGB(255, 0, 0, 1),
+      backgroundColor: Color.fromARGB(0, 1, 1, 19),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'zz',
+              'LKR convert Dolor',
               style: TextStyle(
-                  fontSize: 30,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: Color.fromARGB(255, 0, 0, 200)),
             ),
-            TextField(),
+            TextField(
+              style: TextStyle(
+                color: Color.fromARGB(255, 38, 102, 175),
+                fontSize: 26,
+              ),
+              // decoration: InputDecoration(
+              //   label: Text(
+              //     'enter the LKR amount',
+              //     style: TextStyle(
+              //       color: Colors.amber,
+              //     ),
+              //   ),
+              // ),
+
+              // decoration: InputDecoration(
+              //   labelText: 'good ',
+              // ),
+
+              // decoration: InputDecoration(
+              //   helperText: 'good ',
+              // ),
+
+              decoration: InputDecoration(
+                labelText: ' Enter The LKR Amount ',
+                hintText: '   LKR ',
+                hintStyle: TextStyle(
+                  color: Color.fromARGB(96, 31, 21, 182),
+                ),
+                prefix: Icon(Icons.monetization_on),
+                filled: true,
+                prefixIconColor: Color.fromARGB(255, 9, 106, 109),
+                // focusedBorder: OutlineInputBorder(
+                //   borderSide: BorderSide(
+                //     color: Colors.black,
+                //     width: 2.2,
+                //     strokeAlign: BorderSide.strokeAlignCenter,
+                //   ),
+                //   borderRadius: BorderRadius.all(
+                //     Radius.circular(16),
+                //   ),
+                // ),
+                // enabledBorder: OutlineInputBorder(
+                //   borderSide: BorderSide(
+                //     color: Colors.black,
+                //     width: 2.2,
+                //     strokeAlign: BorderSide.strokeAlignCenter,
+                //   ),
+                //   borderRadius: BorderRadius.all(
+                //     Radius.circular(16),
+                //   ),
+                // ),
+                focusedBorder: border,
+                enabledBorder: border,
+              ),
+            ),
           ],
         ),
       ),
