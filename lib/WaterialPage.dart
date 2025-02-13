@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class CMaterialPage extends StatelessWidget {
@@ -41,6 +42,15 @@ class CMaterialPage extends StatelessWidget {
       //   ),
       // ),
       backgroundColor: Color.fromARGB(0, 1, 1, 19),
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        elevation: 1,
+        title: const Text(
+          'Sri Lanka',
+          style: TextStyle(color: Colors.white),
+        ),
+        centerTitle: true,
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -126,11 +136,32 @@ class CMaterialPage extends StatelessWidget {
               ),
             ),
             //button
-            TextButton(
-              onPressed: () {
-                print('done');
-              },
-              child: Text('Click me'),
+            Container(
+              padding: const EdgeInsets.all(10.0),
+              child: ElevatedButton(
+                //TextButton(
+                onPressed: () {
+                  //debug , release, profile
+                  if (kDebugMode) {
+                    print('done');
+                  }
+                },
+                // style: const ButtonStyle(
+                //   elevation:  MaterialStatePropertyAll(5.0),
+                //   backgroundColor:  MaterialStatePropertyAll(Color.fromARGB(255, 192, 172, 114)),
+                //   foregroundColor:  MaterialStatePropertyAll(Colors.black),
+                //   minimumSize: MaterialStatePropertyAll(Size(200, 50)),
+                // ),
+                style: TextButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 8, 89, 155),
+                  foregroundColor: Colors.yellow[50],
+                  minimumSize: const Size(double.minPositive, 50),
+                  // shape: RoundedRectangleBorder(
+                  //   borderRadius: BorderRadius.circular(5),
+                  // ),
+                ),
+                child: Text('Click me'),
+              ),
             ),
           ],
         ),
