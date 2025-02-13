@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class CMaterialPage extends StatelessWidget {
   const CMaterialPage({super.key});
+//creating varibale
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +51,8 @@ class CMaterialPage extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
+        actions: [Text('hallow')], //whatsapp call ex
+        // leading: ,
       ),
       body: Center(
         child: Column(
