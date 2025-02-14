@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 
 class CMaterialPage extends StatelessWidget {
   const CMaterialPage({super.key});
-//creating varibale
+//1 creating variable
+//2 cretating a funtion
 
   @override
   Widget build(BuildContext context) {
+    double result = 0;
+    final TextEditingController textEditingController = TextEditingController();
     final border = OutlineInputBorder(
       borderSide: BorderSide(
         color: Colors.black,
@@ -76,6 +79,7 @@ class CMaterialPage extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                 child: TextField(
+                  controller: textEditingController,
                   style: TextStyle(
                     color: Color.fromARGB(255, 38, 102, 175),
                     fontSize: 26,
@@ -144,6 +148,8 @@ class CMaterialPage extends StatelessWidget {
               child: ElevatedButton(
                 //TextButton(
                 onPressed: () {
+                  result = double.parse(textEditingController.text) * 2;
+                  // print(double.parse(textEditingController.text) * 2);
                   //debug , release, profile
                   if (kDebugMode) {
                     print('done');
